@@ -4,7 +4,7 @@ WORKDIR /app
 COPY go.mod main.go ./
 RUN go build -o main .
 
-FROM alpine:latest
+FROM scratch
 WORKDIR /app
 COPY --from=builder /app/main .
 
